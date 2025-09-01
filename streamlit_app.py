@@ -14,7 +14,7 @@ params = st.experimental_get_query_params()
 request_token = params.get('request_token', [None])[0]
 
 if request_token:
-    st.write(f"Request Token: {user_id}")
+    st.write(f"Request Token: {request_token}")
     checksum = hashlib.sha256() 
     checksum.update((api_key+api_secret+request_token).encode('utf-8'))
     st.write(checksum.hexdigest())
