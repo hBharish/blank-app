@@ -16,6 +16,6 @@ if user_id:
     st.write(f"Request Token: {user_id}")
     checksum = hashlib.sha256() 
     checksum.update((api_key+api_secret+user_id).encode('utf-8'))
-    st.write(checksum)
+    st.write(checksum.hexdigest())
 else:
     st.write("User ID is not provided in the URL.")
