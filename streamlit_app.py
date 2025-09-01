@@ -29,7 +29,7 @@ url = "https://api.kite.trade/session/token"
 data = {
     "api_key": api_key,
     "request_token": request_token,
-    "checksum": checksum
+    "checksum": checksum.hexdigest()
 }
 
 # Set the headers
