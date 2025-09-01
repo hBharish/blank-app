@@ -8,7 +8,7 @@ st.write(
     "LOGIN HERE @ [KITE CONNECT](https://kite.zerodha.com/connect/login?v=3&api_key=9bjokluovk546xbx)."
 )
 
-params = st.query_params()
+params = st.experimental_get_query_params()
 
 user_id = params.get('request_token', [None])[0]
 
