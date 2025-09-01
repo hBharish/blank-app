@@ -44,6 +44,6 @@ response = requests.post(url, data=data, headers=headers)
 if response.status_code == 200:
     json_data = response.json()
     access_token = json_data['data']['access_token']
-    print(access_token)
+    st.write(access_token)
 else:
     print("Error:", response.text)
