@@ -17,7 +17,7 @@ if request_token:
     st.write(f"Request Token: {request_token}")
     checksum = hashlib.sha256() 
     checksum.update((api_key+api_secret+request_token).encode('utf-8'))
-    st.write(checksum.hexdigest())
+    checksum = checksum.hexdigest()
 else:
     st.write("User ID is not provided in the URL.")
 
@@ -29,7 +29,7 @@ url = "https://api.kite.trade/session/token"
 data = {
     "api_key": api_key,
     "request_token": request_token,
-    "checksum": checksum.hexdigest()
+    "checksum": checksum
 }
 
 # Set the headers
